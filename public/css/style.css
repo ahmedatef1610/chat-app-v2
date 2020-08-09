@@ -1,0 +1,90 @@
+/* body{
+    background-color: #333;
+    color: #fff;
+} */
+
+/* .card-img-top {
+    height: 200px;
+} */
+
+.numberRequests {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 20px;
+    height: 20px;
+    font-size: small;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 20px;
+}
+
+
+.chat {
+    margin-top: -15px;
+    width: 100%;
+}
+
+.chat .side {
+    text-align: center;
+    background: #343a40;
+    padding: 20px 0;
+    overflow: auto;
+    height: calc(100vh - 52px);
+
+}
+
+.chat .side a {
+    color: #fff;
+    font-size: 25px;
+    margin-top: 15px;
+}
+
+.chat span.msg {
+    display: block;
+    width: 90%;
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    font-size: 20px;
+    color: #fff;
+    border-radius: 10px;
+}
+
+.chat span.msg.left {
+    background: #007bff;
+}
+
+.chat span.msg.right {
+    background: #7d7d7d;
+    margin-left: 7%;
+}
+
+.chat .messages {
+    height: calc(100vh - 52px);
+    padding: 15px;
+    position: relative;
+}
+
+.chat #messages-container {
+    height: 85%;
+    overflow: auto;
+}
+
+.chat .messages-form {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.chat .messages-form textarea {
+    height: 50px;
+    resize: none;
+    width: 80%;
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.chat .messages-form button {
+    position: relative;
+    top: -20px;
+}

@@ -1,0 +1,57 @@
+<%- include("parts/header") %>
+
+<%- include("parts/navbar") %>
+
+
+<div class="container py-3">
+    <h2 class="mb-5">Create Account</h2>
+
+    <% if(authError) { %>
+    <p class="alert alert-danger my-3">
+        <%= authError%>
+    </p>
+    <% } %>
+
+    <form action="/auth/signup" method="POST">
+        <div class="form-group">
+            <input type="text" class="form-control" name="username" placeholder="Username" required>
+            <% let usernameError = validationErrors.find(err => err.param === 'username') %>
+            <% if (usernameError) { %>
+            <small class="form-text text-muted"> <%= usernameError.msg %> </small>
+            <% } %>
+        </div>
+
+        <div class="form-group">
+            <input type="email" class="form-control" name="email" placeholder="E-mail" required>
+            <% let emailError = validationErrors.find(err => err.param === 'email') %>
+            <% if (emailError) { %>
+            <small class="form-text text-muted"><%= emailError.msg %></small>
+            <% } %>
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" name="password" placeholder="Password" required>
+            <% let passwordError = validationErrors.find(err => err.param === 'password') %>
+            <% if (passwordError) { %>
+            <small class="form-text text-muted"><%= passwordError.msg %></small>
+            <% } %>
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" name="confirmPassword" placeholder="confirmPassword" required>
+            <% let passwordConfirmError = validationErrors.find(err => err.param === 'confirmPassword') %>
+            <% if (passwordConfirmError) { %>
+            <small class="form-text text-muted"><%= passwordConfirmError.msg %></small>
+            <% } %>
+        </div>
+        <input type="submit" value="Create Account" class="btn btn-primary btn-block">
+    </form>
+    <div class="text-center mt-3">
+        Already have account ? <a href="/auth/login">Login</a>
+    </div>
+</div>
+
+
+<%- include("parts/scripts") %>
+
+</body>
+
+</html>
